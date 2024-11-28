@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0r0ko1umpllt"]
+[gd_scene load_steps=10 format=3 uid="uid://c0r0ko1umpllt"]
 
 [ext_resource type="PackedScene" uid="uid://dckrwbjtgn5du" path="res://player.tscn" id="1_b4xge"]
 [ext_resource type="PackedScene" uid="uid://dxwb7x6ictsp6" path="res://platform.tscn" id="2_1pwng"]
 [ext_resource type="PackedScene" uid="uid://d2rva033qysg6" path="res://rotator.tscn" id="3_lijxb"]
 [ext_resource type="Script" path="res://goal.gd" id="4_v7f1n"]
+[ext_resource type="PackedScene" uid="uid://b3d0qmxbff2lj" path="res://moving_platform.tscn" id="5_6etd2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1n3i8"]
 
@@ -44,3 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05018, 0)
 shape = SubResource("BoxShape3D_5f2x2")
 
 [node name="RespawnPoint" type="Node3D" parent="."]
+
+[node name="MovingPlatform" parent="." instance=ExtResource("5_6etd2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49003, -0.5, 0)
