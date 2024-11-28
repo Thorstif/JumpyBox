@@ -4,6 +4,8 @@ extends RigidBody3D
 @export var turn_rate = 5
 @export var jump_modifier = 5
 
+@export var floor_check: RayCast3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -25,5 +27,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("turn_right"):
 		rotate_y(-turn_rate * delta)
 
-	if Input.is_action_just_released("jump"):
-		apply_central_impulse(Vector3.UP * jump_modifier)
+	if floor_check:
+		var on_floor = floor_check.is_colliding()
+		
+		if Input.is_action_just_released("jump") and on_floor:
+			apply_central_impulse(Vector3.UP * jump_modifier)
