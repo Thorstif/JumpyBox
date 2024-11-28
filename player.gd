@@ -6,6 +6,8 @@ extends RigidBody3D
 
 @export var floor_check: RayCast3D
 
+@export var respawn_point: Node3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -32,3 +34,6 @@ func _physics_process(delta: float) -> void:
 		
 		if Input.is_action_just_released("jump") and on_floor:
 			apply_central_impulse(Vector3.UP * jump_modifier)
+			
+	if respawn_point and global_position.y < - 15:
+		global_transform = respawn_point.global_transform

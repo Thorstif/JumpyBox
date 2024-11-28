@@ -19,7 +19,8 @@ size = Vector3(4, 1, 4)
 
 [node name="MainScene" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_b4xge")]
+[node name="Player" parent="." node_paths=PackedStringArray("respawn_point") instance=ExtResource("1_b4xge")]
+respawn_point = NodePath("../RespawnPoint")
 
 [node name="Platform" parent="." instance=ExtResource("2_1pwng")]
 
@@ -41,3 +42,5 @@ script = ExtResource("4_v7f1n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoalPlatform/Goal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05018, 0)
 shape = SubResource("BoxShape3D_5f2x2")
+
+[node name="RespawnPoint" type="Node3D" parent="."]
