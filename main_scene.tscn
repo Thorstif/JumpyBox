@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0r0ko1umpllt"]
+[gd_scene load_steps=7 format=3 uid="uid://c0r0ko1umpllt"]
 
 [ext_resource type="PackedScene" uid="uid://dckrwbjtgn5du" path="res://player.tscn" id="1_b4xge"]
 [ext_resource type="PackedScene" uid="uid://dxwb7x6ictsp6" path="res://platform.tscn" id="2_1pwng"]
+[ext_resource type="PackedScene" uid="uid://d2rva033qysg6" path="res://rotator.tscn" id="3_lijxb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1n3i8"]
 
@@ -23,3 +24,6 @@ transform = Transform3D(0.76902, 0.429331, -0.473585, 0, 0.740875, 0.671643, 0.6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x0knm")
+
+[node name="Rotator" parent="." instance=ExtResource("3_lijxb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, -7)

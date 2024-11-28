@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2rva033qysg6"]
+
+[ext_resource type="Script" path="res://rotator.gd" id="1_k8uu1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mk20a"]
+size = Vector3(1, 1, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k03ms"]
+size = Vector3(1, 1, 4)
+
+[node name="Rotator" type="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+script = ExtResource("1_k8uu1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_mk20a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_k03ms")
